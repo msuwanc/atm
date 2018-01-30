@@ -1,7 +1,7 @@
 package services
 
-import models.{Cash, ReducedNotes}
+import models.{Cash, Notes}
 
 trait AtmService {
-  def withdraw(cash: Cash): Either[Exception, ReducedNotes]
+  def withdraw(cash: Cash): Either[Exception, Notes]
 }

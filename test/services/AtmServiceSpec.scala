@@ -17,7 +17,7 @@ class AtmServiceSpec extends WordSpec {
 
     // Results
     // Success
-    val note: Note = ReducedNotes(2, 1, 4, 1, 9)
+    val note: Notes = Notes(2, 1, 4, 1, 9)
   }
   trait AtmServiceFixtureSuccess extends AtmServiceFixture
   trait AtmServiceFixtureFailure extends AtmServiceFixture {
@@ -27,13 +27,13 @@ class AtmServiceSpec extends WordSpec {
   "AtmService" should {
     "ok" when {
       "withdraw while atm still has money" in new AtmServiceFixtureSuccess {
-        val result: Either[Exception, Note] = atmService.withdraw(cash)
+        val result: Either[Exception, Notes] = atmService.withdraw(cash)
         result mustBe Right(note)
       }
     }
     "not ok" when {
       "withdraw but atm has run out of money" in new AtmServiceFixtureFailure {
-        val result: Either[Exception, Note] = atmService.withdraw(cash)
+        val result: Either[Exception, Notes] = atmService.withdraw(cash)
         result mustBe Left(CustomException(s"requirement failed: ${Constants.ThousandNoteInvalidMessage}"))
       }
     }

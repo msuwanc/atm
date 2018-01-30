@@ -1,11 +1,11 @@
 package daos
 
-import models.{Atm, Notes, ReducedNotes}
+import models.{Atm, Notes}
+import org.mockito.Mockito
+import org.scalatest.MustMatchers._
 import org.scalatest.WordSpec
 import org.scalatest.mockito.MockitoSugar
 import utils.{Calculation, Constants, CustomException, DatabaseConnection}
-import org.mockito.Mockito
-import org.scalatest.MustMatchers._
 
 class AtmDaoSpec extends WordSpec with MockitoSugar {
   trait AtmDaoFixture {
@@ -22,12 +22,12 @@ class AtmDaoSpec extends WordSpec with MockitoSugar {
     val fakeAtm = Atm(fakeNotes, Calculation.calculateAvailableCash(fakeNotes))
 
     // Arguments
-    val reducedNotes: ReducedNotes = ReducedNotes(1, 1, 1, 1, 1)
-    val invalidTwentyReducedNotes: ReducedNotes = ReducedNotes(100, 0, 0, 0, 0)
-    val invalidFiftyReducedNotes: ReducedNotes = ReducedNotes(0, 100, 0, 0, 0)
-    val invalidHundredReducedNotes: ReducedNotes = ReducedNotes(0, 0, 100, 0, 0)
-    val invalidFiveHundredReducedNotes: ReducedNotes = ReducedNotes(0, 0, 0, 100, 0)
-    val invalidThousandReducedNotes: ReducedNotes = ReducedNotes(0, 0, 0, 0, 100)
+    val reducedNotes: Notes = Notes(1, 1, 1, 1, 1)
+    val invalidTwentyReducedNotes: Notes = Notes(100, 0, 0, 0, 0)
+    val invalidFiftyReducedNotes: Notes = Notes(0, 100, 0, 0, 0)
+    val invalidHundredReducedNotes: Notes = Notes(0, 0, 100, 0, 0)
+    val invalidFiveHundredReducedNotes: Notes = Notes(0, 0, 0, 100, 0)
+    val invalidThousandReducedNotes: Notes = Notes(0, 0, 0, 0, 100)
 
     // Results
     // Success
