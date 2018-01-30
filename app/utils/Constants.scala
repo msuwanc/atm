@@ -1,6 +1,12 @@
 package utils
 
 object Constants {
+  val Twenty = "twenty"
+  val Fifty = "fifty"
+  val Hundred = "hundred"
+  val FiveHundred = "five_hundred"
+  val Thousand = "thousand"
+
   val TwentyValue = 20
   val FiftyValue = 50
   val HundredValue = 100
@@ -16,4 +22,10 @@ object Constants {
   val ThousandNoteInvalidMessage = "Currently, We've run out of thousand notes. Please come back later."
 
   val ReducedNoteInvalidMessage = "Please input notes again. Valid reduced note is start from '0'. '0' means don't reduce that note"
+
+  val TwentyWrongNoteTypeMessage = "Using wrong note type. This is for twenty only."
+  val FiftyWrongNoteTypeMessage = "Using wrong note type. This is for fifty only."
+  val HundredWrongNoteTypeMessage = "Using wrong note type. This is for hundred only."
+  val FiveHundredWrongNoteTypeMessage = "Using wrong note type. This is for five hundred only."
+  val ThousandWrongNoteTypeMessage = "Using wrong note type. This is for thousand only."
 }
