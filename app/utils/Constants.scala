@@ -21,8 +21,6 @@ object Constants {
   val FiveHundredNoteInvalidMessage = "Currently, We've run out of five hundred notes. Please come back later."
   val ThousandNoteInvalidMessage = "Currently, We've run out of thousand notes. Please come back later."
 
-  val ReducedNoteInvalidMessage = "Please input notes again. Valid reduced note is start from '0'. '0' means don't reduce that note"
-
   val TwentyWrongNoteTypeMessage = "Using wrong note type. This is for twenty only."
   val FiftyWrongNoteTypeMessage = "Using wrong note type. This is for fifty only."
   val HundredWrongNoteTypeMessage = "Using wrong note type. This is for hundred only."

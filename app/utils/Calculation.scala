@@ -2,8 +2,6 @@ package utils
 
 import models._
 
-import scala.util.{Failure, Success, Try}
-
 object Calculation {
   def calculateAvailableCash(notes: Notes): Long = {
     (notes.twenty*Constants.TwentyValue)+
@@ -13,7 +11,7 @@ object Calculation {
       (notes.thousand*Constants.ThousandValue)
   }
 
-  def calculateNotes(currentNotes: Notes, reducedNotes: ReducedNotes): Notes = {
+  def calculateNotes(currentNotes: Notes, reducedNotes: Notes): Notes = {
     currentNotes.copy(
       currentNotes.twenty - reducedNotes.twenty,
       currentNotes.fifty - reducedNotes.fifty,
@@ -39,8 +37,8 @@ object Calculation {
     }
   }
 
-  def calculateNotesFromCash(cash: Cash): ReducedNotes = {
-    val result: ReducedNotes = ReducedNotes(0, 0, 0, 0, 0)
+  def calculateNotesFromCash(cash: Cash): Notes = {
+    val result: Notes = Notes(0, 0, 0, 0, 0)
 
     val thousandNotesAndRemains: (Long, Long) = calculateNotesAndRemains(cash.cash, Thousand())
     val fiveHundredNotesAndRemains: (Long, Long) = calculateNotesAndRemains(thousandNotesAndRemains._2, FiveHundred())

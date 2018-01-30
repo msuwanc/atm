@@ -1,7 +1,7 @@
 package daos
 
-import models.{Atm, ReducedNotes}
+import models.{Atm, Notes}
 
 trait AtmDao {
-  def remove(notes: ReducedNotes): Either[Exception, Atm]
+  def remove(notes: Notes): Either[Exception, Atm]
 }
