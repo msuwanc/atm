@@ -16,6 +16,8 @@ class AtmDaoImpl @Inject()(databaseConnection: DatabaseConnection) extends AtmDa
         Atm(newNotes, newCash)
       }
 
+      databaseConnection.atm = newAtm
+      
       newAtm
     } match {
       case Success(value) => Right(value)
